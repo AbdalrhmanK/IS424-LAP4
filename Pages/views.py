@@ -9,12 +9,12 @@ def index(request) :
 def anyNumber(request , number) :
      try:
       price = int(number)
-      tax_rate = price * 1.15
-      number = {'tax_rate':tax_rate}
+      tax = price * 1.15
+      number = {'Tax':tax}
       return render(request , 'Pages/price.html' , number)
      except:
       return HttpResponse("<h1 style = \"color : red ;  text-align: center\";>Error please write valid Number</h1>")
 def taxrate(request) :
-     percent = {'Percent': '15%'}
-     return render(request ,'Pages/percent.html' ,percent  )   
+     tax_rate = {'Tax_rate': '15%'}
+     return render(request ,'Pages/percent.html' ,tax_rate  )   
        
